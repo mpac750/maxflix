@@ -1,0 +1,52 @@
+﻿@{
+    Layout = "~/Areas/Admin/Views/_Layout.cshtml";
+}
+<html>
+<body>
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Charts</h1>
+    </div>
+    <select id="luotxem" class="col-3">
+        <option value="day">Ngày</option>
+        <option value="month">Tháng</option>
+        <option value="year">Năm</option>
+    </select>
+    <br /><br />
+    <div>
+        <form>
+            <label for="xem">Lượt xem:</label>
+            <input type="hidden" id="xem" name="xem" />
+        </form>
+    </div>
+    <div id="piechart"></div>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript">
+        // Load google charts
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        // Draw the chart and set the chart values
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Hours per Day'],
+                ['Kinh dị', 20],
+                ['Hài', 25],
+                ['Hành động', 40],
+                ['Trinh thám', 15],
+                ['Khác', 23]
+            ]);
+
+            // Optional; add a title and set the width and height of the chart
+            var options = { 'title': 'Biểu đồ thống kê lượng người xem theo thể loại', 'width': 550, 'height': 400 };
+
+            // Display the chart inside the <div> element with id="piechart"
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            chart.draw(data, options);
+        }
+    </script>
+</body>
+
+</html>
+

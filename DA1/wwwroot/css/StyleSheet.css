@@ -1,0 +1,8 @@
+﻿body {
+}
+div.post-summary{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}

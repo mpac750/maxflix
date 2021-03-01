@@ -1,0 +1,52 @@
+﻿.card-product:after {
+    content: "";
+    display: table;
+    clear: both;
+    visibility: hidden;
+}
+.card-product {
+    border: 3px solid #ff0000;
+    background-color: #000000;
+}
+.card-product .price-new, .card-product .price {
+    margin-right: 5px;
+}
+.card-product .img-wrap {
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    height:320px;
+}
+
+    .card-product .img-wrap img {
+        max-height:100%;
+        width:250px;
+        object-fit: cover;
+    }
+
+.card-product .info-wrap {
+    overflow: hidden;
+    padding: 15px;
+    border-top: 2px solid #ff0000;
+}
+    .card-product .info-wrap, .card-product .add-to-play{
+        text-align:center;
+        display: inline-block;
+        padding: 10px 20px;
+        color: #ff0000;
+        font-weight: 600;
+        font-size: 14px;
+        transition: all .3s
+    }
+    .card-product .action-wrap {
+        padding-top: 4px;
+        margin-top: 4px;
+    }
+.xemphim-border {
+        border: 1px solid #ff0000;
+    }
+
+.card-product .bottom-wrap {
+    padding: 15px;
+}

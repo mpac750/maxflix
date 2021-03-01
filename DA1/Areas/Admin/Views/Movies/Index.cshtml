@@ -1,0 +1,99 @@
+﻿@model IEnumerable<DA1.Areas.Admin.Models.Movie>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/_Layout.cshtml";
+}
+
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="~/css/StyleSheet.css">
+    </head>
+    <body>
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">PHIM</h1>
+            <a asp-action="Create" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Tạo Mới</a>
+        </div>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.MovieName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.MovieImage)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.MovieVideo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.MovieTrailer)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.MoviePoint)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.MovieDesc)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.MovieTime)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CATEGORY)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NATIONAL)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MovieName)
+                    </td>
+                    <td>
+                        <img src="~/image/@item.MovieImage" height="100" width="85" alt="image" />
+                    </td>
+                    <td>
+                        <video width="150" height="80" controls>
+                            <source src="~/Movie/@item.MovieVideo" type="video/mp4" />
+                        </video>
+                    </td>
+                    <td>
+                        <video width="150" height="80" controls>
+                            <source src="~/trailer/@item.MovieTrailer" type="video/mp4" />
+                        </video>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MoviePoint)
+                    </td>
+
+                    <td>
+                        <div class="post-summary">
+                            @Html.DisplayFor(modelItem => item.MovieDesc)
+                        </div>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MovieTime)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CATEGORY.CategoryName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NATIONAL.NationalName)
+                    </td>
+                    <td>
+                        <a class=" fa-sm text-white-50" asp-action="Edit" asp-route-id="@item.MovieId">Edit</a>
+                        <a class=" fa-sm text-white-50" asp-action="Details" asp-route-id="@item.MovieId">Details</a>
+                        <a class=" fa-sm text-white-50" asp-action="Delete" asp-route-id="@item.MovieId">Delete</a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+
+    </body>
+    </html>

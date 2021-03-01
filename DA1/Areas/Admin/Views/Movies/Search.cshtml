@@ -1,0 +1,77 @@
+﻿@model IEnumerable<DA1.Areas.Admin.Models.Movie>
+@{
+    ViewData["Title"] = "Search";
+    Layout = "~/Areas/Admin/Views/_Layout.cshtml";
+}
+    <head>
+        <link rel="stylesheet" type="text/css" href="~/css/site.css">
+    </head>
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieVideo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieTrailer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MoviePoint)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieDesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CATEGORY)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MovieName)
+                </td>
+                <td>
+                    <img src="~/image/@item.MovieImage" height="100" width="85" />
+                </td>
+                <td>
+                    <video width="200" height="100" controls>
+                        <source src="~/Movie/@item.MovieVideo" type="video/mp4" />
+                    </video>
+                </td>
+                <td>
+                    <video width="200" height="100" controls>
+                        <source src="~/trailer/@item.MovieTrailer" type="video/mp4" />
+                    </video>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MoviePoint)
+                </td>
+                <td>
+                    <div class="post-summary">
+                        @Html.DisplayFor(modelItem => item.MovieDesc)
+                    </div>
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.CATEGORY.CategoryName)
+                </td>
+                <td>
+                    <a class=" fa-sm text-white-50" asp-action="Edit" asp-route-id="@item.MovieId">Edit</a>
+                    <a class=" fa-sm text-white-50" asp-action="Details" asp-route-id="@item.MovieId">Details</a>
+                    <a class=" fa-sm text-white-50" asp-action="Delete" asp-route-id="@item.MovieId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

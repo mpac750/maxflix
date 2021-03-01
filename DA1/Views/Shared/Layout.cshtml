@@ -1,0 +1,290 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DA1Test</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/css.css" />
+    <link href="~/css/footer.css" rel="stylesheet" />
+</head>
+<body style="background-color:black">
+    <header>
+        <nav class="navbar navbar-dark  navbar-expand-sm bg-company-black" style="border-bottom:1px solid red;">
+            <a class="navbar-brand" href="~/Users" style="color:red">
+                <img src="~/image/logoM1.png" width="30" height="30" alt="logo">
+                MaxFlix
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-2" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar-list-2">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/Users/MovieViewModels/Category">Phim Mới<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Top Phim</a>
+                    </li>
+                    <li class="navbar-nav">
+
+                    </li>
+                </ul>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle qg-color" data-toggle="dropdown" style="color:white">Thể Loại</a>
+                    <div class="dropdown-menu">
+                        <a href="/Users/movieviewmodels/hanhdong" class="dropdown-item">Hành Động</a>
+                        <a href="/Users/movieviewmodels/vientuong" class="dropdown-item">Viễn Tưởng</a>
+                        <a href="/Users/movieviewmodels/haihuoc" class="dropdown-item">Hài Hước</a>
+                        <a href="/Users/movieviewmodels/hoathinh" class="dropdown-item">Hoạt Hình</a>
+                        <a href="/Users/movieviewmodels/kinhdi" class="dropdown-item">Kinh dị</a>
+
+                    </div>
+                </div>
+                <div class="dropdown ml-2">
+                    <a href="#" class="dropdown-toggle qg-color" data-toggle="dropdown" style="color:white">Quốc Gia</a>
+                    <div class="dropdown-menu">
+                        <a href="/Users/movieviewmodels/vietnam" class="dropdown-item">Việt Nam</a>
+                        <a href="/Users/movieviewmodels/my" class="dropdown-item">Mỹ</a>
+                        <a href="/Users/movieviewmodels/nhatban" class="dropdown-item">Nhật</a>
+                        <a href="/Users/movieviewmodels/hanquoc" class="dropdown-item">Hàn Quốc</a>
+                    </div>
+                </div>
+                <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+
+                    @using (Html.BeginForm("Search", "MovieViewModels", FormMethod.Get))
+                    {
+                        <!-- Topbar Search -->
+                        <form class="form-inline ml-auto">
+                            <div class="input-group">
+
+                                @Html.TextBox("search")
+
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-outline-light">Search</button>
+                                </div>
+                            </div>
+                        </form>
+                    }
+                    <partial name="_LoginPartial" />
+                </ul>
+            </div>
+        </nav>
+    </header>
+    @RenderBody()
+    <div class="container ">
+        <main role="main" class="pb-3">
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-4">
+                    <div class="dk-footer-box-info">
+                        <div class="footer-social-link">
+                            <h3>Follow us</h3>
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-linkedin"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- End Social link -->
+                    </div>
+                </div>
+                <!-- End Col -->
+                <div class="col-md-12 col-lg-8">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="contact-us">
+                                <div class="contact-icon">
+                                    <i class="fa fa-map-o" aria-hidden="true"></i>
+                                </div>
+                                <!-- End contact Icon -->
+                                <div class="contact-info">
+                                    <h3>Jaipur India</h3>
+                                    <p>5353 Road Avenue</p>
+                                </div>
+                                <!-- End Contact Info -->
+                            </div>
+                            <!-- End Contact Us -->
+                        </div>
+                        <!-- End Col -->
+                        <div class="col-md-6">
+                            <div class="contact-us contact-us-last">
+                                <div class="contact-icon">
+                                    <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                                </div>
+                                <!-- End contact Icon -->
+                                <div class="contact-info">
+                                    <h3>95 711 9 5353</h3>
+                                    <p>Give us a call</p>
+                                </div>
+                                <!-- End Contact Info -->
+                            </div>
+                            <!-- End Contact Us -->
+                        </div>
+                        <!-- End Col -->
+                    </div>
+                    <!-- End Contact Row -->
+                    <div class="row">
+                        <div class="col-md-12 col-lg-6">
+                            <div class="footer-widget footer-left-widget">
+                                <div class="section-heading">
+                                    <h3>Useful Links</h3>
+                                    <span class="animate-border border-black"></span>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#">About us</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Services</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Projects</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Our Team</a>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <a href="#">Contact us</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Blog</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Testimonials</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Faq</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- End Footer Widget -->
+                        </div>
+                        <!-- End col -->
+                        <div class="col-md-12 col-lg-6">
+                            <div class="footer-widget">
+                                <div class="section-heading">
+                                    <h3>Subscribe</h3>
+                                    <span class="animate-border border-black"></span>
+                                </div>
+                                <p>
+                                    <!-- Don’t miss to subscribe to our new feeds, kindly fill the form below. -->
+                                    Reference site about Lorem Ipsum, giving information on its origins, as well.
+                                </p>
+                                <form action="#">
+                                    <div class="form-row">
+                                        <div class="col dk-footer-form">
+                                            <input type="email" class="form-control" placeholder="Email Address">
+                                            <button type="submit">
+                                                <i class="fa fa-send"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!-- End form -->
+                            </div>
+                            <!-- End footer widget -->
+                        </div>
+                        <!-- End Col -->
+                    </div>
+                    <!-- End Row -->
+                </div>
+                <!-- End Col -->
+            </div>
+            <!-- End Widget Row -->
+        </div>
+        <!-- End Contact Container -->
+        <!-- End Copyright -->
+        <!-- Back to top -->
+        
+        <!-- End Back to top -->
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v7.0&appId=1174575952902207&autoLogAppEvents=1" nonce="9nc8MZGx"></script>
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.10";
+            fjs.parentNode.insertBefore(js, fjs);
+
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+    <div class="fbchatbox hidden-xs" style="position:fixed;right:10px;bottom:0;z-index:9999">
+        <div class="fb-page" data-href="https://www.facebook.com/Maxflix-Support-115088460284176/" data-small-header="true"
+             data-adapt-container-width="false" data-height="300" data-width="300" data-hide-cover="true" data-show-facepile="true" data-show-posts="false"
+             data-tabs="messages"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/Maxflix-Support-115088460284176/">LinkFanpage</a></blockquote></div></div>
+        <span class="hide" id="closefbchat" style="right:0px;white-space: nowrap;position:absolute;bottom:299px;width:300px;padding:7px; background: #44619D;color: #fff;cursor: pointer;">Tắt Hỗ Trợ</span>
+    </div>
+    <style>
+        .hide {
+            display: none;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+
+    <script>
+        if (localStorage.getItem("fbchatclose") == 1) {
+
+            jQuery('.fb-page').toggleClass('hide');
+
+            jQuery('#closefbchat').html('<i class="fa fa-comments fa-2x"></i> Hỗ Trợ Khách Hàng').css({ 'bottom': 0 });
+        }
+
+        setTimeout(function () {
+            $("#closefbchat").removeClass("hide");
+        }, 1000);
+
+
+        jQuery('#closefbchat').click(function () {
+            jQuery('.fb-page').toggleClass('hide');
+            if (jQuery('.fb-page').hasClass('hide')) {
+                localStorage.setItem("fbchatclose", 1);
+
+                jQuery('#closefbchat').html('<i class="fa fa-comments fa-2x"></i> Hỗ Trợ Khách Hàng').css({ 'bottom': 0 });
+            }
+            else {
+                localStorage.setItem("fbchatclose", 0);
+                jQuery('#closefbchat').text('Tắt Hỗ Trợ').css({ 'bottom': 299 });
+            }
+        });
+    </script>
+</body>
+</html>

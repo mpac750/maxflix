@@ -1,0 +1,52 @@
+﻿/* extra div which gets the border  */
+.embed-border {
+    border: 1px solid red;
+    box-sizing: border-box; /* prevents extra width from being added */
+}
+
+/* aspect ratio styles */
+.embed-responsive {
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+
+    .embed-responsive iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+/* optional styles */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.wrapper {
+    width: auto;
+    max-width: 1110px;
+    margin: 20px auto;
+}
+.pb-cmnt-container {
+    font-family: Lato;
+    margin-top: 100px;
+}
+
+.pb-cmnt-textarea {
+    resize: none;
+    padding: 20px;
+    height: 130px;
+    width: 100%;
+    color: red;
+    background-color: black;
+    border: 1px solid red;
+}
+.fbcmt{
+    background-color:white;
+}

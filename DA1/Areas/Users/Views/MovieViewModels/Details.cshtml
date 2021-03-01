@@ -1,0 +1,120 @@
+﻿@model DA1.Models.MovieViewModel
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<link href="~/css/detailmovie.css" rel="stylesheet" />
+<link href="~/css/videoborder.css" rel="stylesheet" />
+<br />
+<div class="container">
+    <div class="card card-br">
+        <div class="row">
+            <aside class="col-sm-5">
+                <article class="gallery-wrap">
+                    <div class="img-big-wrap">
+                         <img src="~/image/@Model.MovieImage" />
+                    </div>
+                </article>
+            </aside>
+
+            <aside class="col-sm-7">
+                <article class="card-body p-3">
+                    <h1 class="title mb-3" style="color:#ff0000">@Model.MovieName</h1>
+                    <dl class="item-property" style="color:#ffffff">
+                        <dt>Nội Dung</dt>
+                        <dd>
+                            <p>
+                                @Model.MovieDesc
+                            </p>
+                        </dd>
+                    </dl>
+                 
+                    <dl class="param param-feature" style="color:#ffffff">
+                        <dt>Thời Lượng:</dt>
+                        <dd>@Model.MovieTime</dd>
+                        <dt>Điểm IMDB:</dt>
+                        <dd>@Model.MoviePoint</dd>
+              
+                    </dl>  <!-- item-property-hor .// -->
+                        <hr>
+                        <a asp-area="Users" asp-controller="MovieViewModels" asp-action="WatchMovie" asp-route-id="@Model.MovieId" class="btn btn-lg btn-danger text-uppercase" style="background-color:#ff0000"> XemPhim </a>
+                        
+                </article> <!-- card-body.// -->
+            </aside> <!-- col.// -->
+        </div> <!-- row.// -->
+    </div> <!-- card.// -->
+    <div>
+        <div class="wrapper">
+            <h2 class="text-center" style="color:red">TRAILER</h2>
+            <div class="embed-border">
+                <div class="embed-responsive">
+                    <video width="560" height="315" controls>
+                        <source src="~/trailer/@Model.MovieTrailer" type="video/mp4" />
+                    </video>>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*@{
+            Layout = null;
+        }
+
+        <!DOCTYPE html>
+
+        <html>
+        <head>
+            <meta name="viewport" content="width=device-width" />
+            <title>Details</title>
+        </head>
+        <body>
+
+            <div>
+                <h4>MovieViewModel</h4>
+                <hr />
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.MovieName)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.MovieName)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.MovieImage)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.MovieImage)
+                    </dd>
+                    <dt class="col-sm-2">
+                        <video width="200" height="100" controls>
+                            <source src="~/trailer/@Model.MovieTrailer" type="video/mp4" />
+                        </video>
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.MovieVideo)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.MoviePoint)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.MoviePoint)
+                    </dd>
+
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.MovieDesc)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.MovieDesc)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.CategoryId)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.CategoryId)
+                    </dd>
+                </dl>
+            </div>
+            <a asp-area="Users" asp-controller="MovieViewModels" asp-action="WatchMovie" asp-route-id="@Model.MovieId" class=" btn btn-primary">Xem Phim</a>
+        </body>
+    </html>*@

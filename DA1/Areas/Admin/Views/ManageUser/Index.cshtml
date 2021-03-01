@@ -1,0 +1,61 @@
+﻿
+@model IEnumerable<DA1.Areas.Identity.Models.ApplicationUser>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/_Layout.cshtml";
+}
+<div class="row">
+
+    <div class="col-sm-12">
+
+        <h2>Quản Lí User</h2>
+        <h2>Users: @ViewBag.Number</h2>
+        <hr />
+
+        <table class="table table-dark">
+
+            <thead>
+
+                <tr>
+
+                    <th>Họ</th>
+                    <th>Tên</th>
+                    <th>Ngày Sinh</th>
+                    <th>Email</th>
+                    <th>Số điện thoại</th>
+                  
+                    <th></th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                @foreach (var item in Model)
+
+                {
+
+                <tr>
+
+                    <td>@item.FirstName</td>
+                    <td>@item.LastName</td>
+                    <td>@item.BirthDay</td>
+                    <td>@item.Email</td>
+                    <th>@item.PhoneNumber</th>
+                    <td>
+
+                        <a class=" fa-sm text-white-50" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+
+                    </td>
+
+                </tr>
+
+                }
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

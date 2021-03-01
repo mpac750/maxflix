@@ -1,0 +1,35 @@
+﻿@model DA1.Models.MovieViewModel
+
+@{
+    ViewData["Title"] = "MovieVideo";
+    Layout = "~/Views/Shared/Layout.cshtml";
+
+}
+<link href="~/css/videoborder.css" rel="stylesheet" />
+<div class="container">
+    @*<h3>Last Update Data: <strong style="color:red;">@DateTime.Now.ToString()</strong></h3>*@
+    <div class="wrapper">
+        <h2 class="text-center" style="color:red">@Model.MovieName</h2>
+        <div class="embed-border">
+            <div class="embed-responsive">
+                <iframe width="560" height="315" src="~/Movie/@Model.MovieVideo" type="video/mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="fb-like" data-href="https://www.facebook.com/Maxflix-Support-115088460284176/" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>
+ 
+
+    <h2>Bình luận</h2>
+    <div style="background-color:white;" class="fb-comments" data-href="https://localhost:44387/Users/MovieViewModels/WatchMovie/@Model.MovieId" data-numposts="5" data-width=""></div>
+</div>
+
+<style>
+</style>
+
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v7.0&appId=1174575952902207&autoLogAppEvents=1" nonce="Y8auZ8sF"></script>
+
+

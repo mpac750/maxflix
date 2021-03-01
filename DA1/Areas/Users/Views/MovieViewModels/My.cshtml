@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Product Page";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+@model List<DA1.Models.MovieViewModel>
+<link href="~/wwwroot/css/imgcatagory.css" rel="stylesheet" />
+<link href="~/css/card.css" rel="stylesheet" />
+<hr />
+
+@*<div class="container">
+        <div class="row pannel-box">
+            <div class="col-lg-12">
+                <div class="row sm-pannel">
+
+
+                    @foreach (var item in Model)
+                    {
+                    <div class="col-sm-2">
+                        <div class="box img-cs">
+
+                                <a asp-area="Users" asp-controller="MovieViewModels" asp-action="Details" asp-route-id="@item.MovieId" >
+                                    <img src="~/image/@item.MovieImage" />
+                                </a>
+
+                        </div>
+                    </div>
+                            }
+
+                        </div>
+
+            </div>
+        </div>
+    </div>*@
+<link href="~/css/card image.css" rel="stylesheet" />
+<hr />
+
+<div class="container">
+    <h3 class="text-left mb-4 mt-4">Phim Mỹ </h3>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                <figure class="card card-product">
+                    <div class="img-wrap">
+                        <a asp-area="Users" asp-controller="MovieViewModels" asp-action="Details" asp-route-id="@item.MovieId">
+                            <img src="~/image/@item.MovieImage">
+                        </a>
+                    </div>
+
+                </figure> <!-- card // -->
+            </div> <!-- col // -->
+        }
+    </div> <!-- row.// -->
+</div>
